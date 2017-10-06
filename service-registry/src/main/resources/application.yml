@@ -1,0 +1,13 @@
+#服务器配置
+server:
+  #端口
+  port: 9999
+
+#服务器注册发现配置
+eureka:
+  client:
+    service-url:
+      #服务注册中心地址
+      defaultZone: http://localhost:${server.port}/eureka
+    register-with-eureka: false
+    fetch-registry: false

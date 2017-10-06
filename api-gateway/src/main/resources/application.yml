@@ -1,0 +1,24 @@
+#服务器配置
+server:
+  #端口
+  port: 9001
+
+#服务器注册发现配置
+eureka:
+  client:
+    service-url:
+      #配置服务中心
+      defaultZone: http://localhost:9999/eureka/
+
+#应用配置
+spring:
+  application:
+    name: api-gateway
+
+#API网关配置
+zuul:
+  routes:
+    user-service:
+      path: /users/**
+      serviceId: user-service
+

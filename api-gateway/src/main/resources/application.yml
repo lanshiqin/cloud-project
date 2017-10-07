@@ -5,6 +5,9 @@ server:
 
 #服务器注册发现配置
 eureka:
+  instance:
+    # 将instanceID设置成IP:端口
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
     service-url:
       #配置服务中心

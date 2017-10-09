@@ -7,7 +7,9 @@ server:
 eureka:
   client:
     service-url:
-      #服务注册中心地址
+      #服务注册中心地址，查询服务和注册服务都需要依赖这个地址，默认地址：http://localhost:8761/eureka ，可以配置多个地址用逗号分隔
       defaultZone: http://localhost:${server.port}/eureka
+    #禁用将自己注册到Eureka Server
     register-with-eureka: false
+    #禁用从Eureka Server 获取注册信息
     fetch-registry: false

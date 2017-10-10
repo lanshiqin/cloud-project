@@ -3,6 +3,12 @@ server:
   #端口
   port: 9999
 
+#配置Spring
+spring:
+  application:
+    #应用名称 （服务注册中心）
+    name: service-registry
+
 #服务器注册发现配置
 eureka:
   client:

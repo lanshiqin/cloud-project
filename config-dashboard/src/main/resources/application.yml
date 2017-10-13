@@ -1,0 +1,13 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/lanshiqin/spring-cloud
+          search-paths: config-repo
+          username:
+          password:

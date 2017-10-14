@@ -1,0 +1,20 @@
+#spring配置
+spring:
+  application:
+    #应用名称
+    name: service-registry
+
+#服务器配置
+server:
+  #端口
+  port: 9003
+
+#服务中心发现注册配置
+eureka:
+  instance:
+    #主机名称
+    hostname: service-registry3
+  client:
+    #服务注册中心地址
+    service-url:
+      defaultZone:  http://service-registry1:9001/eureka,http://service-registry2:9002/eureka

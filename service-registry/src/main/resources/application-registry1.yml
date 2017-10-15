@@ -18,3 +18,6 @@ eureka:
     #服务注册中心地址
     service-url:
       defaultZone:  http://service-registry2:9002/eureka,http://service-registry3:9003/eureka
+    #服务注册中心相互注册一定要显示的设置register-with-eureka 和fetch-registry的值为true,否则会服务不可用
+    register-with-eureka: true
+    fetch-registry: true

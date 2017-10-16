@@ -1,2 +1,4 @@
 rootProject.name = 'cloud-project'
+//微服务群
+include 'micro-services'
 

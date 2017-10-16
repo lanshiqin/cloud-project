@@ -1,0 +1,23 @@
+#spring配置
+spring:
+  application:
+    #应用名称（服务调用者）
+    name: consumer-service
+
+#服务器配置
+server:
+  #端口
+  port: 7000
+
+#配置服务注册发现
+eureka:
+  client:
+    #配置服务注册中心地址
+    service-url:
+      defaultZone:  http://service-registry1:9001/eureka
+
+#feign远程调用配置
+feign:
+  hystrix:
+    #开启熔断
+    enabled: true

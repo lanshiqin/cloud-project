@@ -1,0 +1,19 @@
+#spring配置
+spring:
+  application:
+    #应用名称(服务提供者)
+    name: producer-service
+
+#服务器配置
+server:
+  #端口
+  port: 8003
+  #显示名称
+  display-name: producer-service3
+
+#服务中心发现注册配置
+eureka:
+  client:
+    #服务注册中心地址
+    service-url:
+      defaultZone:  http://service-registry1:9001/eureka

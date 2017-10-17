@@ -1,13 +1,24 @@
-server:
-  port: 9003
+#spring配置
 spring:
+  #应用配置
   application:
+    #应用名称(配置中心)
     name: spring-cloud-config-server
+  #云服务配置
   cloud:
     config:
       server:
+        #git中心配置（这里我将配置文件存储在码云上）
         git:
+          #配置文件所在的服务地址
           uri: https://gitee.com/lanshiqin/spring-cloud
-          search-paths: config-repo
+          #配置文件所在的文件路径
+          search-paths: service-registry-config
+          #公开的项目不需要设置用户名和密码
           username:
           password:
+
+#服务器配置
+server:
+  #端口
+  port: 9010

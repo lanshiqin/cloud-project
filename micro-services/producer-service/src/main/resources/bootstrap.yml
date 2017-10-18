@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      name: service-registry
+      profile: dev
+      uri: http://114.215.130.234:9010/

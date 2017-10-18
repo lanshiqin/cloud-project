@@ -17,3 +17,8 @@ eureka:
     #服务注册中心地址
     service-url:
       defaultZone:  http://service-registry1:9001/eureka
+
+management:
+  #禁用安全管理
+  security:
+    enabled: false

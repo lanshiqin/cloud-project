@@ -21,7 +21,7 @@ spring:
 #服务器配置
 server:
   #端口
-  port: 9010
+  port: 9011
 
 #服务器发现注册配置
 eureka:

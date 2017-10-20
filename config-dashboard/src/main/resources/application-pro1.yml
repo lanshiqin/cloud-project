@@ -18,6 +18,13 @@ spring:
           username:
           password:
 
+  #消息中间件配置
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
 #服务器配置
 server:
   #端口
@@ -28,4 +35,9 @@ eureka:
   client:
     serviceUrl:
       #配置服务中心(可配置多个,用逗号隔开)
-      defaultZone: http://localhost:9001/eureka
+      defaultZone: https://www.apiboot.cn/eureka
+
+management:
+  #禁用安全管理
+  security:
+    enabled: false

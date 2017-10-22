@@ -1,27 +1,29 @@
 #服务器配置
 server:
   #端口
-  port: 9001
+  port: 8080
 
-#服务器注册发现配置
+#服务器发现注册配置
 eureka:
-  instance:
-    # 将instanceID设置成IP:端口
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
-    service-url:
-      #配置服务中心
-      defaultZone: http://localhost:9999/eureka/
+    serviceUrl:
+      #配置服务中心(可配置多个,用逗号隔开)
+      defaultZone: https://www.apiboot.cn/eureka
 
-#应用配置
+#spring配置
 spring:
+  #应用配置
   application:
+    #名称: api网关服务
     name: api-gateway
 
 #API网关配置
 zuul:
+  #路由配置
   routes:
-    user-service:
-      path: /users/**
-      serviceId: user-service
+    producer:
+      #响应的路径
+      path: /producer/**
+      #重定向到的服务（根据服务id名称从注册中心获取服务地址）
+      serviceId:  producer-service
 

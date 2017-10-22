@@ -28,8 +28,8 @@ ext {
 }
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile('org.springframework.cloud:spring-cloud-starter-zuul')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

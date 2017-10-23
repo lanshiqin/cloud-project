@@ -1,6 +1,21 @@
+#spring配置
 spring:
+  #云配置
   cloud:
     config:
+      #配置文件前缀 （这里配置的name+profile为我们要读的配置文件 即 service-registry-dev）
       name: service-registry
       profile: dev
-      uri: http://114.215.130.234:9010/
+      #发现配置
+      discovery:
+        #启用服务发现
+        enabled: true
+        #指定server端（配置中心）的 spring.application.name的值，通过该值去注册中心取到配置中心的地址
+        service-id: spring-cloud-config-server
+
+#服务器发现注册配置
+eureka:
+  client:
+    serviceUrl:
+      #配置服务中心(可配置多个,用逗号隔开)
+      defaultZone: https://www.apiboot.cn/eureka

@@ -14,7 +14,7 @@ eureka:
   client:
     #配置服务注册中心地址
     service-url:
-      defaultZone:  http://service-registry1:9001/eureka
+      defaultZone:  https://www.apiboot.cn/eureka
 
 #feign远程调用配置
 feign:

@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Hello控制器
+ * Hello控制器 测试远程调用接口
+ * 将远程调用接口注入，并调用远程方法
  */
 @RestController
 public class HelloController {

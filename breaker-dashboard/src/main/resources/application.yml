@@ -1,4 +1,20 @@
+#Spring配置
+spring:
+  application:
+    #应用名称 （熔断器监控）
+    name: breader-dashboard
+
 #服务器配置
 server:
   #端口
-  port: 9002
+  port: 7010
+
+#配置服务注册发现
+eureka:
+  client:
+    #配置服务注册中心地址
+    service-url:
+      defaultZone:  http://service-registry1:9001/eureka
+turbine:
+  app-config: producer-service
+  cluster-name-expression: new String("default")

@@ -1,0 +1,6 @@
+#Spring配置
+spring:
+  data:
+    mongodb:
+      port: 27017
+      database: auth_server

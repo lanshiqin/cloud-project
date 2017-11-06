@@ -1,6 +1,30 @@
-#Spring配置
+#服务器配置
+server:
+  #端口
+  port: 8020
+
+#服务器发现注册配置
+eureka:
+  client:
+    serviceUrl:
+      #配置服务中心(可配置多个,用逗号隔开)
+      defaultZone: https://www.apiboot.cn/eureka
+
+#spring配置
 spring:
+  #应用配置
+  application:
+    #名称: OAuth2认证授权服务
+    name: auth-server
+  #数据库配置
   data:
     mongodb:
       port: 27017
       database: auth_server
+
+#安全配置
+security:
+  #oauth2配置
+  oauth2:
+    resource:
+      filter-order: 3

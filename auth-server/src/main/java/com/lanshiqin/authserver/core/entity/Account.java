@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 /**
  * 账户实体类
  */
-
 public class Account {
     @Id
     private String id;          // 主键

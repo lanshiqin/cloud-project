@@ -3,6 +3,12 @@ spring:
   application:
     #应用名称(服务提供者)
     name: producer-service
+  cloud:
+    #消息总线
+    bus:
+      trace:
+        #开启消息跟踪
+        enabled: true
 
 #服务器配置
 server:
@@ -16,4 +22,13 @@ eureka:
   client:
     serviceUrl:
       #配置服务中心(可配置多个,用逗号隔开)
-      defaultZone: http://localhost:9001/eureka
+      defaultZone: https://www.apiboot.cn/eureka
+
+#安全配置
+security:
+  oauth2:
+    resource:
+      id: producer-service
+      #指定用户信息地址
+      user-info-uri: https://api.apiboot.cn/auth/user
+      prefer-token-info: false

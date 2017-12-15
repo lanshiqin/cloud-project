@@ -17,14 +17,18 @@ server:
   #显示名称
   display-name: producer-service
 
-##服务器发现注册配置
-#eureka:
-#  client:
-#    serviceUrl:
-#      #配置服务中心(可配置多个,用逗号隔开)
-#      defaultZone: https://www.apiboot.cn/eureka
+#服务器发现注册配置
+eureka:
+  client:
+    serviceUrl:
+      #配置服务中心(可配置多个,用逗号隔开)
+      defaultZone: https://www.apiboot.cn/eureka
 
-management:
-  #禁用安全管理
-  security:
-    enabled: false
+#安全配置
+security:
+  oauth2:
+    resource:
+      id: producer-service
+      #指定用户信息地址
+      user-info-uri: https://api.apiboot.cn/auth/user
+      prefer-token-info: false

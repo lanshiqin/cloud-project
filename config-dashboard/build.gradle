@@ -3,10 +3,12 @@ buildscript {
 		springBootVersion = '1.5.7.RELEASE'
 	}
 	repositories {
+		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
 		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
 	}
 }
 
@@ -22,6 +24,13 @@ repositories {
 	mavenCentral()
 }
 
+apply plugin: 'com.palantir.docker'
+
+docker {
+	name "${project.group}/${jar.baseName}"
+	files jar.archivePath
+	buildArgs(['JAR_FILE': "${jar.archiveName}"])
+}
 
 ext {
 	springCloudVersion = 'Dalston.SR4'
